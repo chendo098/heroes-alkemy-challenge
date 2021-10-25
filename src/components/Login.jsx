@@ -39,12 +39,10 @@ export default function Login({setToken}) {
     };
 
     return (
-        <>
-        <div className="formHeroes d-flex flex-wrap my-3 row-3 row-lg-3 row-sm-1 justify-content-around align-items-center text-center">
-        <div>
+        <div className="formHeroes my-3 row-3 row-lg-3 row-sm-1 text-center">
         <Form onSubmit={handleSubmit} className="card mx-auto p-4 mt-5" style={{ width: '400px' }}>
             <Form.Group controlId="formBasicEmail">
-                <Form.Label>Email</Form.Label>
+                <Form.Label>Correo Electrónico</Form.Label>
                 <Form.Control
                     required
                     name="email"
@@ -68,12 +66,10 @@ export default function Login({setToken}) {
                     maxLength={10}
                 />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button className="mt-3"variant="primary" type="submit">
                 Ingresar
             </Button>
         </Form>
         </div>
-        </div>
-        </>
     );
 }

@@ -17,7 +17,7 @@ export default function Formulario({token}) {
             setValidated(true);
             if (form.checkValidity() === false) {
                 return event.stopPropagation();
-            }
+            };
             try {
                 const idHeroe = input;
                 if (idHeroe == 0){
@@ -32,10 +32,10 @@ export default function Formulario({token}) {
                 setHeroes(response.data);
                 form.reset();
                 setValidated(false);
-              }
+              };
             } catch (error) {
                 console.log(error);
-            }
+            };
         };
 
         const teamSubmit = async (event) => {
@@ -105,10 +105,9 @@ export default function Formulario({token}) {
 
     return (
         <>
-        <div className="formHeroes d-flex flex-wrap my-3 row-3 row-lg-3 row-sm-1 justify-content-center text-center">
-        <div>
+        <div className="formHeroes d-flex flex-wrap my-3 row-3 row-lg-3 row-sm-1 text-center">
             <Form  noValidate validated={validated} className="card p-4 m-5 mx-sm-center" style={{ width: '20rem', border:'solid' }} onSubmit={handleSubmit}>
-           <Form.Group className="container-search">
+            <Form.Group className="container-search">
             <Form.Label className="search-div">
             <h4>Encuentra tu Heroe</h4>
             </Form.Label>
@@ -139,7 +138,6 @@ export default function Formulario({token}) {
         )}
         </Form>
         </div> 
-        </div>
         </>
     );
 }

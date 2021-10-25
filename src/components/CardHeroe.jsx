@@ -2,11 +2,9 @@ import { Button } from "react-bootstrap";
 import '../index.css';
 
 export default function CardHeroe({heroes}) {
-           
     
     return (
-        <>
-         <div className="card m-5" style={{ width: '20rem' }}>
+        <div className="card m-5 text-center" style={{ width: '20rem' }}>
             <img src={heroes?.image?.url} alt="heroe" className="img-fluid" />
             <p>Nombre: {heroes?.name}</p>
             <p>Clase: {heroes?.biography?.alignment}</p>
@@ -14,6 +12,5 @@ export default function CardHeroe({heroes}) {
               Agregar
             </Button>
             </div>
-        </>
     );
-}
+};

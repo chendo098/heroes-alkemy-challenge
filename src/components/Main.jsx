@@ -107,8 +107,8 @@ export default function Main({token}) {
       };
 
 return (
-    <div className="formHeroes d-flex flex-wrap my-3 row-3 row-lg-3 row-sm-1 justify-content-center text-center">
-    <div>
+    <div className="formHeroes d-flex flex-wrap my-3 row-3 row-lg-3 row-sm-1 justify-content-center">
+    <div className="text-center">
         <Form  noValidate className="card p-4 m-5 mx-sm-center" style={{ width: '20rem', border:'solid' }} onSubmit={handleSubmit}>
        <Form.Group className="container-search">
         <Form.Label className="search-div">
@@ -134,7 +134,7 @@ return (
     )}
     </Form>
     </div>
-    <div className="m-4 formHeroes"> 
+    <div className="m-4"> 
     <Form>
     {team.length !== 0 && (                                       
     <Team team={team} handleDelete={handleDelete}/>       

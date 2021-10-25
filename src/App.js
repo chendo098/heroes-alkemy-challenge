@@ -5,25 +5,17 @@ import Login from './components/Login';
 import Main from './components/Main';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { useState } from 'react';
-import swal from "sweetalert";
+
 
 const localToken = JSON.parse(localStorage.getItem('token'))?.token || '';
 
 function App() {
     const [token, setToken] = useState(localToken);
     
-    const logOut = () => {
-        swal({
-            title: "Gracias por visitarnos",
-            text: "Te esperamos pronto para formar tu equipo",
-        });
-        localStorage.removeItem('token');
-        setToken('');
-    };
-
+ 
     return (
         <Router>
-            <NavbarR token={token} logOut={logOut}/>
+            <NavbarR token={token} setToken={setToken}/>
             <Switch>
                     <Route path="/" exact>
                         <Main token={token}/>

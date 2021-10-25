@@ -4,9 +4,7 @@ import { Button } from "react-bootstrap";
 export default function Powerstats({team}) {
 
     return (
-      <>
-        <div style={{ width: '20rem' }}> 
-        <div className="text-align-left">
+        <div className="p-4 m-3" style={{ width: '20rem' }}>
         <h4>Nivel del Equipo</h4>
           <p><Button size="sm" className="sm btn btn-success">{team.length &&
           team.reduce((a, b) => {
@@ -40,8 +38,6 @@ export default function Powerstats({team}) {
           team.reduce((a, b) => {
             return a + parseInt(b.powerstats.intelligence)/team.length;
           }, 0)}</Button> Altura del Equipo</p> 
-          </div>
         </div>
-        </>
     );
-}
+};

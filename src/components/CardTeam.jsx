@@ -1,9 +1,10 @@
 import { Button, Form, Modal } from 'react-bootstrap';
 import '../index.css';
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 import axios from 'axios';
 
 export default function CardTeam({team,handleDelete}) {
+    
     const [showInfo, setShowInfo] = useState(false);
     const handleCloseInfo = () => setShowInfo(false);
     const [showDetalle, setShowDetalle] = useState(null);
@@ -14,10 +15,10 @@ export default function CardTeam({team,handleDelete}) {
         setShowInfo(true);
       };
       
-      return (
+return (
         <>
-            <div className="card" style={{ width: '10rem'}}>
-            <img src={team.image?.url} alt="heroe" className="img-fluid" />
+        <div className="card text-center" style={{ width: '10rem'}}>
+          <img src={team.image?.url} alt="heroe" className="img-fluid" />
             <p>Nombre: {team.name}</p>
             <p>Inteligencia: {team.powerstats?.intelligence}</p>
             <p>Fuerza: {team.powerstats?.strength}</p>
@@ -25,25 +26,24 @@ export default function CardTeam({team,handleDelete}) {
             <p>Dureza: {team.powerstats?.durability}</p>
             <p>Poder: {team.powerstats?.power}</p>
             <p>Combate: {team.powerstats?.combat}</p>
-            <Button
-                          size="sm"
-                          className="btn m-2 sm btn-secondary mx-1"
-                          onClick={handleShowInfo}
-                          value={team?.id}
-                        >
-                          Detalle
-                        </Button>
-                        <Button
-                        size="sm"
-                        className="btn m-2 sm btn-danger mx-1 table-buttons"
-                        onClick={handleDelete}
-                        value={team?.id}>
-                        Eliminar
-                      </Button>
-            </div>
-          <div>
-      <Modal show={showInfo} onHide={handleCloseInfo}>
-        <Modal.Header>
+          <Button
+            size="sm"
+            className="btn m-2 sm btn-secondary mx-1"
+            onClick={handleShowInfo}
+            value={team?.id}>
+            Detalle
+          </Button>
+          <Button
+            size="sm"
+            className="btn m-2 sm btn-danger mx-1 table-buttons"
+            onClick={handleDelete}
+            value={team?.id}>
+            Eliminar
+          </Button>
+        </div>
+        <div>
+        <Modal show={showInfo} onHide={handleCloseInfo}>
+          <Modal.Header>
           <Modal.Title>Más información</Modal.Title>
         </Modal.Header>
         <Modal.Body>
